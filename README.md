@@ -1,6 +1,6 @@
 # mge-miniprojekt
 
-## Was ist der SPP (Studenten Party Planner)?
+## Was ist der SPP (Student Party Planner)?
 Eine simple Andoird mobile App mit welcher Studenten Parties organisieren können und Einladungen verschicken. Das App zeigt an, wer zugesagt oder abgelehnt hat.
 Zusätzlich lassen sich auch Informationen über die Party abspeichern (Ort, Datum, Zeit, sonstige Informationen)
 
