@@ -6,3 +6,6 @@
 - User can create party
 - User can invite friends to party
 - User can view parties (to which he received an invite)
+
+## optional
+- police is here feature
