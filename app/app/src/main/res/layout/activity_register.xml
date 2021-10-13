@@ -19,7 +19,7 @@
 
     <EditText
         style="@style/inputField"
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextFirstname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -36,52 +36,52 @@
 
     <EditText
         style="@style/inputField"
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextLastname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="lastname"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextFirstname"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toStartOf="@+id/editTextFirstname"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFirstname" />
 
     <EditText
         style="@style/inputField"
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="email"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextLastname"
+        app:layout_constraintStart_toStartOf="@+id/editTextLastname"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastname" />
 
     <EditText
         style="@style/inputField"
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="password"
         android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
         style="@style/inputField"
-        android:id="@+id/editTextNumberPassword2"
+        android:id="@+id/editTextPasswordConfirm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Confirm password"
         android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <Button
         android:id="@+id/button_login_activity_register"
@@ -112,6 +112,6 @@
         android:layout_marginBottom="32dp"
         android:text="@string/button_register_text"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword2"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword2" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordConfirm"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordConfirm" />
 </androidx.constraintlayout.widget.ConstraintLayout>
