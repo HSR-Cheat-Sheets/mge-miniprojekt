@@ -19,7 +19,12 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".WelcomeActivity" />
+
+        </activity>
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">

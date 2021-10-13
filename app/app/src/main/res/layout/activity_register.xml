@@ -84,15 +84,15 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_login_activity_register"
         style="@style/buttonSecondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="@string/button_login_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/button_register_activity_register"
+        app:layout_constraintStart_toStartOf="@+id/button_register_activity_register" />
 
     <TextView
         android:id="@+id/textView2"
@@ -100,13 +100,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Already have an account?"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_login_activity_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         style="@style/buttonPrimary"
-        android:id="@+id/button2"
+        android:id="@+id/button_register_activity_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"

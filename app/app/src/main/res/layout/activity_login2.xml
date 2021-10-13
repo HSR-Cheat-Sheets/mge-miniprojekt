@@ -50,15 +50,15 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_register_activity_login"
         style="@style/buttonSecondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="@string/button_register_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/button_login_activity_login"
+        app:layout_constraintStart_toStartOf="@+id/button_login_activity_login" />
 
     <TextView
         android:id="@+id/textView2"
@@ -66,12 +66,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Don't have an account yet?"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_register_activity_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_login_activity_login"
         style="@style/buttonPrimary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
