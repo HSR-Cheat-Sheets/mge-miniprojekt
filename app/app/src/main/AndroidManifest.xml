@@ -11,6 +11,7 @@
         android:theme="@style/Theme.SPP">
         <activity
             android:name=".LoginActivity"
+            android:label="Login"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -19,6 +20,7 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
+            android:label="Register"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
