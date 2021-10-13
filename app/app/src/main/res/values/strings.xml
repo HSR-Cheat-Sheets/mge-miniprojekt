@@ -3,5 +3,6 @@
     <string name="app_name_long">Student Party Planner</string>
     <string name="button_login_text">Log in</string>
     <string name="button_register_text">Register</string>
-
+    <string name="welcome_text">Sign up to never ever miss a party again!</string>
+    <string name="logo_content_descrition">Student Party Planner Logo</string>
 </resources>
