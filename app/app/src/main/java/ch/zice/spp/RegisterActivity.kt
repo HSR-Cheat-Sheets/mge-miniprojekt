@@ -83,7 +83,7 @@ class RegisterActivity : AppCompatActivity() {
                 ).show()
             }
 
-            TextUtils.equals(password.trim(), passwordConfirm.trim()) -> {
+            !TextUtils.equals(password.trim(), passwordConfirm.trim()) -> {
                 Toast.makeText(
                     this,
                     "Password do not match",
