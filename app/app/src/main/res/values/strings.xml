@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SPP</string>
+    <string name="app_name_long">Student Party Planner</string>
+    <string name="button_login_text">Log in</string>
+    <string name="button_register_text">Register</string>
+
 </resources>
