@@ -11,6 +11,14 @@
         android:theme="@style/Theme.SPP">
         <activity
             android:name=".LoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".WelcomeActivity" />
+
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
@@ -23,7 +31,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

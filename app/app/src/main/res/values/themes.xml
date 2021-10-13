@@ -14,8 +14,20 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="ButtonSecondary">
-        <item name="backgroundTint">#3F4749</item>
+    <style name="buttonPrimary">
+        <item name="backgroundTint">@color/primaryColor</item>
+        <item name="cornerRadius">3dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="buttonSecondary">
+        <item name="backgroundTint">@color/secondaryColor</item>
+        <item name="cornerRadius">3dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="inputField">
+        <item name="backgroundTint">@color/primaryColor</item>
     </style>
 
 </resources>

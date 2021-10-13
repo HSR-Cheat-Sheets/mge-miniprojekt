@@ -21,11 +21,13 @@
 
     <Button
         android:id="@+id/button_login"
+        style="@style/buttonPrimary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="56dp"
+        android:onClick="goToLoginActivity"
         android:text="@string/button_login_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_register"
@@ -34,6 +36,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        style="@style/buttonSecondary"
         android:id="@+id/button_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -45,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/button_login"
-        style="@style/ButtonSecondary"/>
+        />
 
     <ImageView
         android:id="@+id/imageView"
