@@ -2,15 +2,12 @@ package ch.zice.spp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ch.zice.spp.fragments.DashboardFragment
 import ch.zice.spp.fragments.FriendsFragment
 import ch.zice.spp.fragments.PartiesFragment
 import ch.zice.spp.fragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.annotation.NonNull
 
 import com.google.android.material.navigation.NavigationBarView
 
