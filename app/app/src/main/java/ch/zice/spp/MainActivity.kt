@@ -2,6 +2,7 @@ package ch.zice.spp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ch.zice.spp.fragments.DashboardFragment
@@ -24,27 +25,16 @@ class MainActivity : AppCompatActivity() {
     private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        supportActionBar?.hide() // hide the title bar
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         replaceFragment(dashboardFragment)
 
-        Toast.makeText(
-            this,
-            "Hello. You are 'logged in' ;-)",
-            Toast.LENGTH_SHORT
-        ).show()
-
 
         val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavBar.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
-
-            val id = item.itemId
-
-            Toast.makeText(
-                this,
-                "Switch tab",
-                Toast.LENGTH_SHORT
-            ).show()
 
             when (item.itemId) {
                 R.id.ic_dashboard -> {
@@ -66,10 +56,6 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         })
-
-
-
-
     }
 
     private fun replaceFragment(fragment: Fragment){
