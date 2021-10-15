@@ -18,12 +18,18 @@
         <item name="backgroundTint">@color/primaryColor</item>
         <item name="cornerRadius">3dp</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
 
     <style name="buttonSecondary">
         <item name="backgroundTint">@color/secondaryColor</item>
         <item name="cornerRadius">3dp</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
 
     <style name="inputField">

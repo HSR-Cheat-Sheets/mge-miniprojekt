@@ -10,27 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SPP">
         <activity
+            android:name=".TabProfile.DeleteAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TabFriends.SendFriendRequestActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
-            android:label="Login"
-            android:exported="false">
+            android:exported="false"
+            android:label="Login">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".WelcomeActivity" />
-
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:label="Register"
-            android:exported="false">
+            android:exported="false"
+            android:label="Register">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".WelcomeActivity" />
-
         </activity>
         <activity
             android:name=".WelcomeActivity"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
