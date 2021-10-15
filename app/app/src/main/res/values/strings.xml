@@ -5,6 +5,14 @@
     <string name="button_register_text">Register</string>
     <string name="welcome_text">Sign up to never ever miss a party again!</string>
     <string name="logo_content_descrition">Student Party Planner Logo</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="logo_content_description">Logo SPP</string>
+
+<!--    delete account acitvity -->
+    <string name="warning_title">WARNING</string>
+    <string name="warning_text">This action will delete all profile data. You won't be able to access your data after you hit confirm!</string>
+    <string name="warning_confirmation_text">Are you sure?</string>
+    <string name="delete_account_button_text">Delete account</string>
+    <string name="delete_account_cancle_button_text">Cancle</string>
+
 </resources>
