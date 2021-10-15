@@ -39,9 +39,5 @@ class WelcomeActivity : AppCompatActivity() {
         val intent = Intent(this, RegisterActivity::class.java).apply{}
         startActivity(intent)
     }
-
-
-
-
-
 }
+

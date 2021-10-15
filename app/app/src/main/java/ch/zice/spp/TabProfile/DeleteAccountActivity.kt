@@ -10,3 +10,4 @@ class DeleteAccountActivity : AppCompatActivity() {
         setContentView(R.layout.activity_delete_account)
     }
 }
+

@@ -62,3 +62,4 @@ class FriendsFragment : Fragment() {
             }
     }
 }
+

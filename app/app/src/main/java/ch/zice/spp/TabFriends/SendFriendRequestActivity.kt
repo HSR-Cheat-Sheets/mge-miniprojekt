@@ -10,3 +10,4 @@ class SendFriendRequestActivity : AppCompatActivity() {
         setContentView(R.layout.activity_send_friend_request)
     }
 }
+

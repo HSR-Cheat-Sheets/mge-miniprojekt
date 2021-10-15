@@ -22,3 +22,4 @@ class ExampleInstrumentedTest {
         assertEquals("ch.zice.spp", appContext.packageName)
     }
 }
+
