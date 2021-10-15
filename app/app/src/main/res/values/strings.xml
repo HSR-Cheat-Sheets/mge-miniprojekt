@@ -8,17 +8,17 @@
 
     <string name="logo_content_description">Logo SPP</string>
 
-<!--    Input fields (Edit text) -->
+    <!--    Input fields (Edit text) -->
     <string name="email_input_hint">email</string>
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="password">Password</string>
     <string name="password_confirm">Confirm password</string>
 
-<!--    register acitivity -->
+    <!--    register acitivity -->
     <string name="text_already_have_an_account">Already have an account?</string>
 
-<!--    login acitivity -->
+    <!--    login acitivity -->
     <string name="text_dont_have_an_account_yet">"Don't have an account yet?"</string>
 
 
@@ -29,19 +29,19 @@
     <string name="delete_account_button_text">Delete account</string>
     <string name="delete_account_cancle_button_text">Cancle</string>
 
-<!--    send friend request activity -->
+    <!--    send friend request activity -->
     <string name="button_send_friend_request">Send request</string>
 
 
-<!--    Tab Friends -->
+    <!--    Tab Friends -->
     <string name="friendlist_tab">Friendlist</string>
     <string name="friend_request_tab">Requests</string>
     <string name="add_friend_button_content_description">Add friend</string>
 
-<!--    Tab Parties -->
+    <!--    Tab Parties -->
     <string name="title_tab_parties">Parties</string>
 
-<!--    Tab Profile -->
+    <!--    Tab Profile -->
     <string name="title_tab_profile">Profile</string>
 
 </resources>

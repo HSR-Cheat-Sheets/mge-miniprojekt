@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SPP">
         <activity
+            android:name=".SplashscreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".TabProfile.DeleteAccountActivity"
             android:exported="false" />
         <activity
@@ -34,11 +42,7 @@
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
