@@ -25,15 +25,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email_input_hint"
         android:inputType="textPersonName"
-        android:shadowColor="#B82929"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintVertical_bias="0.226"
+        android:importantForAutofill="no" />
 
     <EditText
         style="@style/inputField"
@@ -41,12 +41,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/password"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:importantForAutofill="no" />
 
 
     <Button
@@ -65,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Don't have an account yet?"
+        android:text="@string/text_dont_have_an_account_yet"
         app:layout_constraintBottom_toTopOf="@+id/button_register_activity_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -25,14 +25,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="firstname"
+        android:hint="@string/firstname"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintVertical_bias="0.226"
+        android:importantForAutofill="no" />
 
     <EditText
         style="@style/inputField"
@@ -40,12 +41,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="lastname"
+        android:hint="@string/lastname"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/editTextFirstname"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/editTextFirstname"
-        app:layout_constraintTop_toBottomOf="@+id/editTextFirstname" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextFirstname"
+        android:importantForAutofill="no" />
 
     <EditText
         style="@style/inputField"
@@ -53,11 +55,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="email"
+        android:hint="@string/email_input_hint"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/editTextLastname"
         app:layout_constraintStart_toStartOf="@+id/editTextLastname"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLastname" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastname"
+        android:importantForAutofill="no" />
 
     <EditText
         style="@style/inputField"
@@ -65,11 +68,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/password"
         android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
         app:layout_constraintStart_toStartOf="@+id/editTextEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        android:importantForAutofill="no" />
 
     <EditText
         style="@style/inputField"
@@ -77,11 +81,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Confirm password"
+        android:hint="@string/password_confirm"
         android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/button_login_activity_register"
@@ -99,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Already have an account?"
+        android:text="@string/text_already_have_an_account"
         app:layout_constraintBottom_toTopOf="@+id/button_login_activity_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
