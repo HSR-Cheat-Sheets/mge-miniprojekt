@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SPP">
         <activity
+            android:name=".EditParty"
+            android:exported="true" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="true">
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".WelcomeActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".WelcomeActivity" />
         </activity>
         <activity
             android:name=".SplashscreenActivity"
@@ -49,7 +52,7 @@
         </activity>
         <activity
             android:name=".WelcomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

@@ -57,4 +57,15 @@
     <string name="profile_invites">Friend invites</string>
     <string name="profile_default_number">42</string>
 
+    <!--    Party -->
+    <string name="party_name">Edit Name</string>
+    <string name="party_date">Edit Date</string>
+    <string name="party_location">Edit Location</string>
+    <string name="party_friends">Invite Friends</string>
+
+    <!--    Edit Party -->
+    <string name="edit_party_title">Edit Party</string>
+    <string name="edit_party_number">Number: 42</string>
+    <string name="edit_party_details">Details</string>
+
 </resources>
