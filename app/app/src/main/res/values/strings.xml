@@ -49,5 +49,12 @@
     <string name="edit_profile_save">Save changes</string>
     <string name="edit_profile_delete">Delete my account</string>
 
+    <!--    Profile -->
+    <string name="profile_edit">Edit Profile</string>
+    <string name="profile_logout">Log out</string>
+    <string name="profile_attended">Parties attended</string>
+    <string name="profile_friends">Friends</string>
+    <string name="profile_invites">Friend invites</string>
+    <string name="profile_default_number">42</string>
 
 </resources>
