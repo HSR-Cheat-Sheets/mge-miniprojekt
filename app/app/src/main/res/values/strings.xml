@@ -9,7 +9,7 @@
     <string name="logo_content_description">Logo SPP</string>
 
     <!--    Input fields (Edit text) -->
-    <string name="email_input_hint">email</string>
+    <string name="email_input_hint">Email</string>
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="password">Password</string>
@@ -43,5 +43,11 @@
 
     <!--    Tab Profile -->
     <string name="title_tab_profile">Profile</string>
+
+    <!--    Edit Profile -->
+    <string name="edit_profile_mobile">Mobile</string>
+    <string name="edit_profile_save">Save changes</string>
+    <string name="edit_profile_delete">Delete my account</string>
+
 
 </resources>
