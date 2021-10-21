@@ -61,6 +61,18 @@ class FirestoreClass {
                     Constants.LOGGED_IN_USERNAME,
                     "${user.firstName} ${user.lastName}"
                 )
+                editor.putString(
+                    "firstname",
+                    user.firstName
+                )
+                editor.putString(
+                    "lastname",
+                    user.lastName
+                )
+                editor.putString(
+                    "email",
+                    user.email
+                )
                 editor.apply()
 
                 when(activity){

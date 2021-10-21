@@ -19,7 +19,7 @@
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <EditText
-        android:id="@+id/editProfileLastname"
+        android:id="@+id/editProfileFirstname"
         style="@style/inputField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,16 +38,16 @@
 
     <EditText
         style="@style/inputField"
-        android:id="@+id/editProfileFamilyname"
+        android:id="@+id/editProfileLastname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/lastname"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editProfileLastname"
+        app:layout_constraintEnd_toEndOf="@+id/editProfileFirstname"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/editProfileLastname"
-        app:layout_constraintTop_toBottomOf="@+id/editProfileLastname"
+        app:layout_constraintStart_toStartOf="@+id/editProfileFirstname"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileFirstname"
         android:importantForAutofill="no" />
 
     <EditText
@@ -58,10 +58,10 @@
         android:ems="10"
         android:hint="@string/email_input_hint"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editProfileFamilyname"
+        app:layout_constraintEnd_toEndOf="@+id/editProfileLastname"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/editProfileFamilyname"
-        app:layout_constraintTop_toBottomOf="@+id/editProfileFamilyname"
+        app:layout_constraintStart_toStartOf="@+id/editProfileLastname"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileLastname"
         android:importantForAutofill="no" />
 
     <EditText
