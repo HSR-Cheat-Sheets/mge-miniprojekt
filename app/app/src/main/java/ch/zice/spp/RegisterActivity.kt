@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import ch.zice.spp.utils.firestore.FirestoreClass
+import ch.zice.spp.utils.models.User
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -109,6 +111,17 @@ class RegisterActivity : AppCompatActivity() {
                                     "User registered successfully",
                                     Toast.LENGTH_SHORT
                                 ).show()
+
+                                val user = User(
+                                    firebaseUser.uid,
+                                    firstname,
+                                    lastname,
+                                    email
+                                )
+
+                                FirestoreClass().registerUser(this@RegisterActivity, user)
+
+
                             } else {
                                 Toast.makeText(
                                     this,
@@ -126,7 +139,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun showProgress(){
+    private fun showProgress(){
         mProgressDialog = Dialog(this)
         mProgressDialog.setContentView(R.layout.dialoag_progress)
         mProgressDialog.setCancelable(false)
@@ -134,7 +147,12 @@ class RegisterActivity : AppCompatActivity() {
         mProgressDialog.show()
     }
 
-    fun hideProgressDialog(){
+    private fun hideProgressDialog(){
         mProgressDialog.dismiss()
     }
+
+    fun userRegistrationSuccess(){
+
+    }
+
 }

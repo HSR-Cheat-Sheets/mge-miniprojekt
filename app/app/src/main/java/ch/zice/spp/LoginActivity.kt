@@ -3,11 +3,14 @@ package ch.zice.spp
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import ch.zice.spp.utils.firestore.FirestoreClass
+import ch.zice.spp.utils.models.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
@@ -22,7 +25,8 @@ class LoginActivity : AppCompatActivity() {
         // Rergister button
         val buttonRegister = findViewById<Button>(R.id.button_register_activity_login)
         buttonRegister.setOnClickListener(){
-            goToRegisterActivity()
+//            goToRegisterActivity()
+            goToMainActivity()
         }
 
         // Login button
@@ -43,6 +47,8 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                             tmpTextTest.text = "Login succeeded ..." + FirebaseAuth.getInstance().currentUser
+                            FirestoreClass().getUserDetails(this@LoginActivity)
+
                         } else {
                             Toast.makeText(
                                 this,
@@ -108,6 +114,14 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    fun userLoggedInSuccess(user: User){
+        Log.i("First Name: ", user.firstName)
+        Log.i("Last Name: ", user.lastName)
+        Log.i("Email: ", user.email)
+
+        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        finish()
+    }
 
 
 }
