@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:contentDescription="@string/logo_content_descrition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <EditText
+        android:id="@+id/editProfileLastname"
+        style="@style/inputField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/firstname"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.226"
+        android:importantForAutofill="no" />
+
+    <EditText
+        style="@style/inputField"
+        android:id="@+id/editProfileFamilyname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/lastname"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editProfileLastname"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/editProfileLastname"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileLastname"
+        android:importantForAutofill="no" />
+
+    <EditText
+        style="@style/inputField"
+        android:id="@+id/editProfileEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/email_input_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editProfileFamilyname"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/editProfileFamilyname"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileFamilyname"
+        android:importantForAutofill="no" />
+
+    <EditText
+        style="@style/inputField"
+        android:id="@+id/editProfileMobile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/edit_profile_mobile"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editProfileEmail"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/editProfileEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileEmail"
+        android:importantForAutofill="no" />
+
+    <EditText
+        style="@style/inputField"
+        android:id="@+id/editProfilePassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editProfileMobile"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/editProfileMobile"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileMobile"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editProfilePasswordConfirm"
+        style="@style/inputField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/password_confirm"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editProfilePassword"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/editProfilePassword"
+        app:layout_constraintTop_toBottomOf="@+id/editProfilePassword" />
+
+    <Button
+        android:id="@+id/button_edit_profile_save"
+        style="@style/buttonPrimary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Save changes"
+        app:layout_constraintEnd_toEndOf="@+id/editProfilePasswordConfirm"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editProfilePasswordConfirm"
+        app:layout_constraintTop_toBottomOf="@+id/editProfilePasswordConfirm" />
+
+
+
+    <Button
+        android:id="@+id/button_edit_profile_delete"
+        style="@style/buttonDanger"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_profile_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_edit_profile_save"
+        app:layout_constraintStart_toStartOf="@+id/button_edit_profile_save"
+        android:layout_marginBottom="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

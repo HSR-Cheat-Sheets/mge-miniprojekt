@@ -9,7 +9,7 @@
     <string name="logo_content_description">Logo SPP</string>
 
     <!--    Input fields (Edit text) -->
-    <string name="email_input_hint">email</string>
+    <string name="email_input_hint">Email</string>
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="password">Password</string>
@@ -43,5 +43,29 @@
 
     <!--    Tab Profile -->
     <string name="title_tab_profile">Profile</string>
+
+    <!--    Edit Profile -->
+    <string name="edit_profile_mobile">Mobile</string>
+    <string name="edit_profile_save">Save changes</string>
+    <string name="edit_profile_delete">Delete my account</string>
+
+    <!--    Profile -->
+    <string name="profile_edit">Edit Profile</string>
+    <string name="profile_logout">Log out</string>
+    <string name="profile_attended">Parties attended</string>
+    <string name="profile_friends">Friends</string>
+    <string name="profile_invites">Friend invites</string>
+    <string name="profile_default_number">42</string>
+
+    <!--    Party -->
+    <string name="party_name">Edit Name</string>
+    <string name="party_date">Edit Date</string>
+    <string name="party_location">Edit Location</string>
+    <string name="party_friends">Invite Friends</string>
+
+    <!--    Edit Party -->
+    <string name="edit_party_title">Edit Party</string>
+    <string name="edit_party_number">Number: 42</string>
+    <string name="edit_party_details">Details</string>
 
 </resources>
