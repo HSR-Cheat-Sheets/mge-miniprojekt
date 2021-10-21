@@ -1,8 +1,11 @@
 package ch.zice.spp
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import ch.zice.spp.databinding.ActivityMainBinding
 import ch.zice.spp.fragments.DashboardFragment
 import ch.zice.spp.fragments.FriendsFragment
 import ch.zice.spp.fragments.PartiesFragment
@@ -16,17 +19,23 @@ import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
+
     private val dashboardFragment = DashboardFragment()
     private val partiesFragment = PartiesFragment()
     private val friendsFragment = FriendsFragment()
     private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         supportActionBar?.hide() // hide the title bar
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
         replaceFragment(dashboardFragment)
 
 
@@ -61,4 +70,7 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
 
     }
+    
+    
+
 }

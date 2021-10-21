@@ -1,11 +1,13 @@
 package ch.zice.spp
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
@@ -13,6 +15,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var mProgressDialog: Dialog
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -39,6 +44,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun register(){
+
+
 
         val firstname = findViewById<EditText>(R.id.editTextFirstname).text.toString()
         val lastname = findViewById<EditText>(R.id.editTextLastname).text.toString()
@@ -90,10 +97,11 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else -> {
-
+                showProgress()
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.trim(), password)
                     .addOnCompleteListener(
                         OnCompleteListener <AuthResult>{ task ->
+                            hideProgressDialog()
                             if(task.isSuccessful){
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
                                 Toast.makeText(
@@ -116,5 +124,22 @@ class RegisterActivity : AppCompatActivity() {
 
 
         }
+    }
+
+    fun showProgress(){
+        mProgressDialog = Dialog(this)
+        mProgressDialog.setContentView(R.layout.dialoag_progress)
+
+
+//        val textView_progress_text = findViewById<TextView>(R.id.textView_progress_text)
+//        textView_progress_text.text = text
+        mProgressDialog.setCancelable(false)
+        mProgressDialog.setCanceledOnTouchOutside(false)
+        mProgressDialog.show()
+
+    }
+
+    fun hideProgressDialog(){
+        mProgressDialog.dismiss()
     }
 }
