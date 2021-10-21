@@ -129,14 +129,9 @@ class RegisterActivity : AppCompatActivity() {
     fun showProgress(){
         mProgressDialog = Dialog(this)
         mProgressDialog.setContentView(R.layout.dialoag_progress)
-
-
-//        val textView_progress_text = findViewById<TextView>(R.id.textView_progress_text)
-//        textView_progress_text.text = text
         mProgressDialog.setCancelable(false)
         mProgressDialog.setCanceledOnTouchOutside(false)
         mProgressDialog.show()
-
     }
 
     fun hideProgressDialog(){
