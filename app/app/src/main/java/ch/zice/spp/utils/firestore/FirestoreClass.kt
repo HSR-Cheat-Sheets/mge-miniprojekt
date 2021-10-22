@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import android.widget.Toast
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.RegisterActivity
 import ch.zice.spp.utils.Constants
@@ -83,8 +84,13 @@ class FirestoreClass {
 
             }
 
+    }
 
-
+    fun updateUserProfileData(activity: Activity, userHashMap: HashMap<String, Any>){
+        mFireStore.collection(Constants.USERS).document(getCurrentUserID())
+            .update(userHashMap)
+            .addOnSuccessListener { Toast.makeText(activity, "Data save successfully", Toast.LENGTH_SHORT).show() }
+            .addOnFailureListener { Toast.makeText(activity, "An error occurred while updating the data.", Toast.LENGTH_SHORT).show() }
     }
 
 }
