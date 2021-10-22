@@ -37,12 +37,14 @@ class EditProfileActivity : AppCompatActivity() {
         val firstname = sharedPrefs.getString("firstname", "")!!
         val lastname = sharedPrefs.getString("lastname", "")!!
         val email = sharedPrefs.getString("email", "")!!
-        val mobile = sharedPrefs.getString("mobile", "")!!
+        val mobile = sharedPrefs.getLong("mobile", 0)
+
+//        Toast.makeText(this, mobile, Toast.LENGTH_SHORT).show()
 
         firstnameView.setText(firstname)
         lastnameView.setText(lastname)
         emailView.setText(email)
-        mobileView.setText(mobile)
+        mobileView.setText(mobile.toString())
 
 
 
@@ -59,6 +61,9 @@ class EditProfileActivity : AppCompatActivity() {
 
 
             if (validateData(tmpUsr)){
+                if(tmpUsr["mobile"].toString() == ""){
+                    tmpUsr.remove("mobile")
+                }
                 saveData(tmpUsr)
             } else {
                 Toast.makeText(this, "Data validation error.", Toast.LENGTH_LONG).show()
@@ -72,6 +77,9 @@ class EditProfileActivity : AppCompatActivity() {
 
     private fun saveData(userHashMap: HashMap<String, Any>){
 //        Toast.makeText(this, "Saving data...", Toast.LENGTH_LONG).show()
+        userHashMap.remove("password")
+        userHashMap.remove("passwordConfirm")
+        userHashMap["mobile"] = Integer.parseInt(userHashMap.get("mobile").toString())
         FirestoreClass().updateUserProfileData(this, userHashMap)
     }
 

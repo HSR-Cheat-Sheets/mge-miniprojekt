@@ -74,6 +74,10 @@ class FirestoreClass {
                     "email",
                     user.email
                 )
+                editor.putLong(
+                    "mobile",
+                    user.mobile
+                )
                 editor.apply()
 
                 when(activity){
@@ -91,6 +95,8 @@ class FirestoreClass {
             .update(userHashMap)
             .addOnSuccessListener { Toast.makeText(activity, "Data save successfully", Toast.LENGTH_SHORT).show() }
             .addOnFailureListener { Toast.makeText(activity, "An error occurred while updating the data.", Toast.LENGTH_SHORT).show() }
+        getUserDetails(activity)
     }
+
 
 }

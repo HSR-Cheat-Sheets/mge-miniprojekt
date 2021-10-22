@@ -12,6 +12,7 @@ import android.widget.TextView
 import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.R
 import ch.zice.spp.utils.Constants
+import ch.zice.spp.utils.auth.FirebaseAuthClass
 
 
 class ProfileFragment : Fragment() {
@@ -32,6 +33,10 @@ class ProfileFragment : Fragment() {
             activity?.startActivity(Intent(activity, EditProfileActivity::class.java).apply{})
         }
 
+        view.findViewById<Button>(R.id.profile_button_logout).setOnClickListener(){
+            FirebaseAuthClass().logOut()
+        }
+
         val sharedPrefs = this.getActivity()?.getSharedPreferences(Constants.SPP_PREFERENCES, Context.MODE_PRIVATE)
         val username = sharedPrefs?.getString(Constants.LOGGED_IN_USERNAME, "")!!
         val tmp = view.findViewById<TextView>(R.id.profile_textview_name)
@@ -39,6 +44,7 @@ class ProfileFragment : Fragment() {
 
         return view
     }
+
 
 }
 
