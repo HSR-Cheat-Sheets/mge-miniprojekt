@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -17,6 +18,9 @@ import ch.zice.spp.utils.models.User
 import java.io.IOException
 
 class EditProfileActivity : AppCompatActivity() {
+
+    private var mSelectedImageFileUri: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
@@ -69,6 +73,8 @@ class EditProfileActivity : AppCompatActivity() {
                 Toast.makeText(this, "Data validation error.", Toast.LENGTH_LONG).show()
             }
 
+            FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
+
 
         }
 
@@ -119,7 +125,7 @@ class EditProfileActivity : AppCompatActivity() {
             if(requestCode == Constants.PICK_IMAGE_REQUEST_CODE){
                 if (data != null){
                     try{
-                        val selectedImageFileUri = data.data!!
+                        mSelectedImageFileUri = data.data!!
                         Toast.makeText(this, "Image choosen successfully.", Toast.LENGTH_SHORT).show()
                     } catch (e: IOException){
                         e.printStackTrace()

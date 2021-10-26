@@ -3,6 +3,7 @@ package ch.zice.spp.utils.firestore
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.util.Log
 import android.widget.Toast
 import ch.zice.spp.LoginActivity
@@ -12,6 +13,8 @@ import ch.zice.spp.utils.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class FirestoreClass {
 
@@ -98,5 +101,20 @@ class FirestoreClass {
         getUserDetails(activity)
     }
 
+    fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?){
+        val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(
+            Constants.USER_PROFILE_IMAGE + System.currentTimeMillis() + "." + Constants.getFileExtension(activity, imageFileURI)
+        )
+
+        sRef.putFile(imageFileURI!!).addOnSuccessListener { taskSnapshot ->
+            Log.e("Firebase Image URL", taskSnapshot.metadata!!.reference!!.downloadUrl.toString())
+            taskSnapshot.metadata!!.reference!!.downloadUrl
+                .addOnSuccessListener { uri -> Log.e("Downloadable Image URL", uri.toString()) }
+                .addOnFailureListener { exception ->
+                    Log.e("Exception", exception.toString())
+                }
+
+        }
+    }
 
 }
