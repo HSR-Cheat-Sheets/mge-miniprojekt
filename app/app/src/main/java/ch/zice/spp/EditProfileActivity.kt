@@ -15,11 +15,13 @@ import androidx.core.content.ContextCompat
 import ch.zice.spp.utils.Constants
 import ch.zice.spp.utils.firestore.FirestoreClass
 import ch.zice.spp.utils.models.User
+import com.bumptech.glide.Glide
 import java.io.IOException
 
 class EditProfileActivity : AppCompatActivity() {
 
     private var mSelectedImageFileUri: Uri? = null
+    private var mUserProfileImageURL: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,25 +57,30 @@ class EditProfileActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener(){
 
-            val tmpUsr = HashMap<String, Any>()
-            tmpUsr["firstName"] = firstnameView.text.toString()
-            tmpUsr["lastName"] = lastnameView.text.toString()
-            tmpUsr["email"] = emailView.text.toString()
-            tmpUsr["mobile"] = mobileView.text.toString()
-            tmpUsr["password"] = passwordView.text.toString()
-            tmpUsr["passwordConfirm"] = passwordConfirmView.text.toString()
+            val userObject = HashMap<String, Any>()
+            userObject["firstName"] = firstnameView.text.toString()
+            userObject["lastName"] = lastnameView.text.toString()
+            userObject["email"] = emailView.text.toString()
+            userObject["mobile"] = mobileView.text.toString()
+            userObject["password"] = passwordView.text.toString()
+            userObject["passwordConfirm"] = passwordConfirmView.text.toString()
 
+            if (mSelectedImageFileUri != null){
+                FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
+                userObject["image"] = mUserProfileImageURL
+                Glide.with(this).load(mUserProfileImageURL).into(profilePicture)
+            }
 
-            if (validateData(tmpUsr)){
-                if(tmpUsr["mobile"].toString() == ""){
-                    tmpUsr.remove("mobile")
+            if (validateData(userObject)){
+                if(userObject["mobile"].toString() == ""){
+                    userObject.remove("mobile")
                 }
-                saveData(tmpUsr)
+                saveData(userObject)
             } else {
                 Toast.makeText(this, "Data validation error.", Toast.LENGTH_LONG).show()
             }
 
-            FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
+
 
 
         }
@@ -119,6 +126,10 @@ class EditProfileActivity : AppCompatActivity() {
         }
     }
 
+    fun imageUploadSuccess(imageURL: String){
+        mUserProfileImageURL = imageURL
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK){
@@ -135,5 +146,7 @@ class EditProfileActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
 }

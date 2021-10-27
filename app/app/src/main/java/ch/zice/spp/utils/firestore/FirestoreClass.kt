@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
 import android.widget.Toast
+import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.RegisterActivity
 import ch.zice.spp.utils.Constants
@@ -102,6 +103,7 @@ class FirestoreClass {
     }
 
     fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?){
+
         val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(
             Constants.USER_PROFILE_IMAGE + System.currentTimeMillis() + "." + Constants.getFileExtension(activity, imageFileURI)
         )
@@ -109,7 +111,14 @@ class FirestoreClass {
         sRef.putFile(imageFileURI!!).addOnSuccessListener { taskSnapshot ->
             Log.e("Firebase Image URL", taskSnapshot.metadata!!.reference!!.downloadUrl.toString())
             taskSnapshot.metadata!!.reference!!.downloadUrl
-                .addOnSuccessListener { uri -> Log.e("Downloadable Image URL", uri.toString()) }
+                .addOnSuccessListener { uri ->
+                    Log.e("Downloadable Image URL", uri.toString())
+                    when(activity){
+                        is EditProfileActivity -> {
+                            activity.imageUploadSuccess(uri.toString())
+                        }
+                    }
+                }
                 .addOnFailureListener { exception ->
                     Log.e("Exception", exception.toString())
                 }

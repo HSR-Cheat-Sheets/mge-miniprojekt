@@ -39,10 +39,16 @@ class ProfileFragment : Fragment() {
 
         val sharedPrefs = this.getActivity()?.getSharedPreferences(Constants.SPP_PREFERENCES, Context.MODE_PRIVATE)
         val username = sharedPrefs?.getString(Constants.LOGGED_IN_USERNAME, "")!!
-        val tmp = view.findViewById<TextView>(R.id.profile_textview_name)
-        tmp?.text = username
+        val profileUsernameView = view.findViewById<TextView>(R.id.profile_textview_name)
+        profileUsernameView?.text = username
 
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+
     }
 
 
