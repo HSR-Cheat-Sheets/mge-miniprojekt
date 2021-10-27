@@ -16,7 +16,7 @@
         android:contentDescription="@string/logo_content_descrition"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:src="@drawable/ic_baseline_account_circle_24" />
 
     <TextView
         android:id="@+id/profile_textview_name"
