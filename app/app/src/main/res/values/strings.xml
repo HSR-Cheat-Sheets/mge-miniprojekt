@@ -68,4 +68,7 @@
     <string name="edit_party_number">Number: 42</string>
     <string name="edit_party_details">Details</string>
 
+    <!-- Dashboard Fragemnt  -->
+    <string name="dashboard_fragment_welcome_text">Welcome!</string>
+
 </resources>

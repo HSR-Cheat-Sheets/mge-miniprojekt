@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private val dashboardFragment = DashboardFragment()
     private val partiesFragment = PartiesFragment()
-    private val friendsFragment = FriendsFragment()
+//    private val friendsFragment = FriendsFragment()
     private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(partiesFragment)
                     true
                 }
-                R.id.ic_friends -> {
-                    replaceFragment(friendsFragment)
-                    true
-                }
+//                R.id.ic_friends -> {
+//                    replaceFragment(friendsFragment)
+//                    true
+//                }
                 R.id.ic_profile -> {
                     replaceFragment(profileFragment)
                     true
