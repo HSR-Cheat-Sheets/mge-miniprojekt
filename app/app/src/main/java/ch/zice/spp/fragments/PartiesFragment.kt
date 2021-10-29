@@ -11,6 +11,9 @@ import ch.zice.spp.R
 import ch.zice.spp.utils.firestore.FirestoreClass
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
+import java.text.SimpleDateFormat
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,20 +36,30 @@ class PartiesFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        //Get data from DB
         val db = FirebaseFirestore.getInstance();
 
-        val docRef = db.collection("parties").document("inmoOYCyuBedWtExSlMY")
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d("exists", "DocumentSnapshot data: ${document.data}")
-                } else {
-                    Log.d("NOexists", "No such document")
+        val parties: MutableList<Party> = mutableListOf();
+
+        db.collection("parties").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+
+
+                    Log.d("exists", "${document.data}")
+                    val party = Party(
+                        document.data.get("name") as String,
+                        document.data.get("location") as String,
+                        document.data.get("organizer") as String,
+                        Date());
+                    parties.add(party);
+
+
+                    Log.d("exists", "${parties.get(0).getName()}")
                 }
             }
-            .addOnFailureListener { exception ->
-                Log.d("ErrorDB", "get failed with ", exception)
-            }
+
     }
 
     override fun onCreateView(
@@ -77,4 +90,28 @@ class PartiesFragment : Fragment() {
             }
     }
 }
+
+class Party(name: String, location: String, organizer: String, date: Date ) {
+
+    private val name: String = name;
+    private val location: String = location;
+    private val organizer: String = organizer;
+    private val date: Date = date;
+
+    fun getName(): String {
+        return this.name;
+    }
+    fun getLocation(): String {
+        return this.location;
+    }
+    fun getOranizer(): String {
+        return this.organizer;
+    }
+    fun getDate(): Date {
+        return this.date;
+    }
+}
+
+
+
 
