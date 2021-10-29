@@ -70,5 +70,7 @@
 
     <!-- Dashboard Fragemnt  -->
     <string name="dashboard_fragment_welcome_text">Welcome!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

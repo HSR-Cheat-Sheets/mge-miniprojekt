@@ -6,13 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.ListView
 import android.widget.Toast
 import ch.zice.spp.R
 import ch.zice.spp.utils.firestore.FirestoreClass
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
-import java.text.SimpleDateFormat
+
+
+
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,28 +43,6 @@ class PartiesFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        //Get data from DB
-        val db = FirebaseFirestore.getInstance();
-
-        val parties: MutableList<Party> = mutableListOf();
-
-        db.collection("parties").get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-
-
-                    Log.d("exists", "${document.data}")
-                    val party = Party(
-                        document.data.get("name") as String,
-                        document.data.get("location") as String,
-                        document.data.get("organizer") as String,
-                        Date());
-                    parties.add(party);
-
-
-                    Log.d("exists", "${parties.get(0).getName()}")
-                }
-            }
 
     }
 
@@ -88,27 +72,6 @@ class PartiesFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
-}
-
-class Party(name: String, location: String, organizer: String, date: Date ) {
-
-    private val name: String = name;
-    private val location: String = location;
-    private val organizer: String = organizer;
-    private val date: Date = date;
-
-    fun getName(): String {
-        return this.name;
-    }
-    fun getLocation(): String {
-        return this.location;
-    }
-    fun getOranizer(): String {
-        return this.organizer;
-    }
-    fun getDate(): Date {
-        return this.date;
     }
 }
 
