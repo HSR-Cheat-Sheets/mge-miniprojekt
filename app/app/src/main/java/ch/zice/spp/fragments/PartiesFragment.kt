@@ -1,11 +1,16 @@
 package ch.zice.spp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import ch.zice.spp.R
+import ch.zice.spp.utils.firestore.FirestoreClass
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +33,20 @@ class PartiesFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        val db = FirebaseFirestore.getInstance();
+
+        val docRef = db.collection("parties").document("inmoOYCyuBedWtExSlMY")
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d("exists", "DocumentSnapshot data: ${document.data}")
+                } else {
+                    Log.d("NOexists", "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("ErrorDB", "get failed with ", exception)
+            }
     }
 
     override fun onCreateView(
