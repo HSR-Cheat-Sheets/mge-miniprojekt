@@ -7,24 +7,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 import ch.zice.spp.EditParty
-import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.R
 import ch.zice.spp.utils.firestore.FirestoreClass
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
-import java.util.*
+import ch.zice.spp.utils.models.Party
+import kotlin.collections.ArrayList
 
 
 class PartiesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
 
+    override fun onResume() {
+        super.onResume()
+        Log.i("Resumed fragment", "REsssssssssssumed")
+        getPartiesListFromFirestore()
     }
 
     override fun onCreateView(
@@ -42,6 +42,26 @@ class PartiesFragment : Fragment() {
         }
 
         return view
+    }
+
+    fun getPartiesListFromFirestore(){
+        val statusText = view?.findViewById<TextView>(R.id.PartiesLoadingStatusTextView)
+        statusText?.setText("started...")
+        FirestoreClass().getPartiesList(this)
+    }
+
+    fun successPartiesListFromFirestore(partiesList: ArrayList<Party>){
+
+        val statusText = view?.findViewById<TextView>(R.id.PartiesLoadingStatusTextView)
+
+
+        for(i in partiesList){
+            Log.i("Product Name", i.name)
+        }
+
+        statusText?.setText("done")
+
+
     }
 
 

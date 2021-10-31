@@ -42,5 +42,13 @@
 
     </ScrollView>
 
+    <TextView
+        android:id="@+id/PartiesLoadingStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="not started"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="696dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

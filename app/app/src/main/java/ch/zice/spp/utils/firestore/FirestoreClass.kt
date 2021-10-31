@@ -6,10 +6,13 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.RegisterActivity
+import ch.zice.spp.fragments.PartiesFragment
 import ch.zice.spp.utils.Constants
+import ch.zice.spp.utils.models.Party
 import ch.zice.spp.utils.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -124,6 +127,31 @@ class FirestoreClass {
                 }
 
         }
+    }
+
+
+    fun getPartiesList(fragment: Fragment){
+        mFireStore.collection(Constants.PARTIES)
+//            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e("Parties List", document.documents.toString())
+                val partiesList: ArrayList<Party> = ArrayList()
+
+                for (i in document.documents){
+                    val party = i.toObject(Party::class.java)
+                    party!!.id = i.id
+
+                    partiesList.add(party)
+                }
+
+                when(fragment){
+                    is PartiesFragment -> {
+                        fragment.successPartiesListFromFirestore(partiesList)
+                    }
+                }
+
+            }
     }
 
 }
