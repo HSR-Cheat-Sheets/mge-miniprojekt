@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -50,6 +51,7 @@ class EditProfileActivity : AppCompatActivity() {
         firstnameView.setText(firstname)
         lastnameView.setText(lastname)
         emailView.setText(email)
+        emailView.isEnabled = false
         mobileView.setText(mobile.toString())
 
 
@@ -68,6 +70,19 @@ class EditProfileActivity : AppCompatActivity() {
             if (mSelectedImageFileUri != null){
                 FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
                 userObject["image"] = mUserProfileImageURL
+
+                val sharedPreferences = this.getSharedPreferences(
+                    Constants.SPP_PREFERENCES,
+                    Context.MODE_PRIVATE
+                )
+
+                val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                editor.putString(
+                    Constants.USER_PROFILE_IMAGE_URI,
+                    mUserProfileImageURL
+                )
+                editor.apply()
+
                 Glide.with(this).load(mUserProfileImageURL).into(profilePicture)
             }
 
