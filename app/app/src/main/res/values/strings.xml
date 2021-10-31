@@ -73,4 +73,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+<!--    Bottom Menu Navigation Tabs -->
+    <string name="menu_nav_dashboard">Dashboard</string>
+    <string name="menu_nav_parties">Parties</string>
+    <string name="menu_nav_profile">Profile</string>
+
+
 </resources>

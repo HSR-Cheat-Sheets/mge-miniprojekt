@@ -21,7 +21,8 @@
         <entry key="app/src/main/res/layout/fragment_friend_request.xml" value="0.3859375" />
         <entry key="app/src/main/res/layout/fragment_friendlist.xml" value="0.3859375" />
         <entry key="app/src/main/res/layout/fragment_friends.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_parties.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_parties.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_party_switcher.xml" value="0.39739583333333334" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.196875" />
       </map>
