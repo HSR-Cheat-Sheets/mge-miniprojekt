@@ -9,13 +9,38 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/party_list"
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/add_party_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add party"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_party_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="185dp"
+            android:layout_height="195dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="136dp" />
 
-    </ListView>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
