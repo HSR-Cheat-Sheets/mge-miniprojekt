@@ -8,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ch.zice.spp.EditParty
 import ch.zice.spp.R
+import ch.zice.spp.adapters.MyPartiesListAdapter
 import ch.zice.spp.utils.firestore.FirestoreClass
 import ch.zice.spp.utils.models.Party
 import kotlin.collections.ArrayList
@@ -44,9 +47,9 @@ class PartiesFragment : Fragment() {
         return view
     }
 
-    fun getPartiesListFromFirestore(){
+    private fun getPartiesListFromFirestore(){
         val statusText = view?.findViewById<TextView>(R.id.PartiesLoadingStatusTextView)
-        statusText?.setText("started...")
+        statusText?.text = "started..."
         FirestoreClass().getPartiesList(this)
     }
 
@@ -59,7 +62,16 @@ class PartiesFragment : Fragment() {
             Log.i("Product Name", i.name)
         }
 
-        statusText?.setText("done")
+        statusText?.text = "done"
+
+        val tmp = view?.findViewById<RecyclerView>(R.id.rv_my_party_items)
+
+        if(partiesList.size > 0){
+            tmp?.layoutManager = LinearLayoutManager(activity)
+            tmp?.setHasFixedSize(true)
+            val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList)
+            tmp?.adapter = adapterParties
+        }
 
 
     }
