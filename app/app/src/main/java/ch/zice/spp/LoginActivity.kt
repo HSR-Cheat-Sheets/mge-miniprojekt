@@ -4,14 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ch.zice.spp.utils.firestore.FirestoreClass
 import ch.zice.spp.utils.models.User
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -22,14 +20,11 @@ class LoginActivity : AppCompatActivity() {
         val email = findViewById<TextView>(R.id.editTextLoginEmail)
         val password = findViewById<TextView>(R.id.editTextLoginPassword)
 
-        // Rergister button
         val buttonRegister = findViewById<Button>(R.id.button_register_activity_login)
         buttonRegister.setOnClickListener(){
-//            goToRegisterActivity()
-            goToMainActivity()
+            goToRegisterActivity()
         }
 
-        // Login button
         val buttonLogin = findViewById<Button>(R.id.button_login_activity_login)
         val tmpTextTest = findViewById<TextView>(R.id.loginTestTextView)
 

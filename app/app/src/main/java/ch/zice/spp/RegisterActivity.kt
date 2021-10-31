@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import ch.zice.spp.utils.firestore.FirestoreClass
 import ch.zice.spp.utils.models.User
@@ -19,24 +18,19 @@ import com.google.firebase.auth.FirebaseUser
 class RegisterActivity : AppCompatActivity() {
     private lateinit var mProgressDialog: Dialog
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        // Login button
         val buttonLogin = findViewById<Button>(R.id.button_login_activity_register)
         buttonLogin.setOnClickListener(){
             goToLoginActivity()
         }
 
-        // Login button
         val buttonRegister = findViewById<Button>(R.id.button_register_activity_register)
         buttonRegister.setOnClickListener(){
             register()
         }
-
-
     }
 
 
@@ -47,16 +41,11 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun register(){
 
-
-
         val firstname = findViewById<EditText>(R.id.editTextFirstname).text.toString()
         val lastname = findViewById<EditText>(R.id.editTextLastname).text.toString()
         val email = findViewById<EditText>(R.id.editTextEmail).text.toString()
         val password = findViewById<EditText>(R.id.editTextPassword).text.toString()
         val passwordConfirm = findViewById<EditText>(R.id.editTextPasswordConfirm).text.toString()
-
-
-
 
         when{
             TextUtils.isEmpty(firstname.trim{it <= ' '}) -> {
@@ -131,11 +120,7 @@ class RegisterActivity : AppCompatActivity() {
                             }
                         }
                     )
-
             }
-
-
-
         }
     }
 

@@ -1,20 +1,14 @@
 package ch.zice.spp
 
-import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import ch.zice.spp.databinding.ActivityMainBinding
 import ch.zice.spp.fragments.DashboardFragment
-import ch.zice.spp.fragments.FriendsFragment
 import ch.zice.spp.fragments.PartiesFragment
 import ch.zice.spp.fragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 import com.google.android.material.navigation.NavigationBarView
-
-
 
 
 class MainActivity : AppCompatActivity() {

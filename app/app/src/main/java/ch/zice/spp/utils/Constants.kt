@@ -17,7 +17,6 @@ object Constants {
     const val USER_PROFILE_IMAGE_URI: String = "User_Profile_Image_uri"
 
     const val PARTIES: String = "parties"
-    const val USER_ID: String = "user_id"
 
 
     fun showImageChooser(activity: Activity){

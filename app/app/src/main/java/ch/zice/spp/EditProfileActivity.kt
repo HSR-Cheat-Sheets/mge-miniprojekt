@@ -45,16 +45,11 @@ class EditProfileActivity : AppCompatActivity() {
         val email = sharedPrefs.getString("email", "")!!
         val mobile = sharedPrefs.getLong("mobile", 0)
 
-//        Toast.makeText(this, mobile, Toast.LENGTH_SHORT).show()
-
         firstnameView.setText(firstname)
         lastnameView.setText(lastname)
         emailView.setText(email)
         emailView.isEnabled = false
         mobileView.setText(mobile.toString())
-
-
-
 
         saveButton.setOnClickListener(){
 
@@ -93,17 +88,11 @@ class EditProfileActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Data validation error.", Toast.LENGTH_LONG).show()
             }
-
-
-
-
         }
-
     }
 
 
     private fun saveData(userHashMap: HashMap<String, Any>){
-//        Toast.makeText(this, "Saving data...", Toast.LENGTH_LONG).show()
         userHashMap.remove("password")
         userHashMap.remove("passwordConfirm")
         userHashMap["mobile"] = Integer.parseInt(userHashMap.get("mobile").toString())

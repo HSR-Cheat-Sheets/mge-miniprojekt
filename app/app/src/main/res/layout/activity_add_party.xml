@@ -92,18 +92,6 @@
         app:layout_constraintStart_toStartOf="@+id/addPartyDate"
         app:layout_constraintTop_toBottomOf="@+id/addPartyDate" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/editPartyFriends"-->
-<!--        style="@style/inputField"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:ems="10"-->
-<!--        android:hint="@string/party_friends"-->
-<!--        android:inputType="textPersonName"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/editPartyLocation"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/editPartyLocation"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/editPartyLocation" />-->
-
     <Button
         android:id="@+id/button_add_party"
         style="@style/buttonPrimary"

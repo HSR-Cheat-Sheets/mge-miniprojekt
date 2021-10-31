@@ -1,7 +1,5 @@
 package ch.zice.spp.utils.models
 
-
-
 data class Party (
     var id: String = "",
     var date: String = "",

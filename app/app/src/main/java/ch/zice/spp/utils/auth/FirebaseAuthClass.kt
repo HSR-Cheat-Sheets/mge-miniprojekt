@@ -1,6 +1,5 @@
 package ch.zice.spp.utils.auth
 
-import android.content.SharedPreferences
 import com.google.firebase.auth.FirebaseAuth
 
 
