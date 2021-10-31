@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ch.zice.spp.EditParty
+import ch.zice.spp.AddParty
 import ch.zice.spp.R
 import ch.zice.spp.adapters.MyPartiesListAdapter
 import ch.zice.spp.utils.firestore.FirestoreClass
@@ -41,7 +41,7 @@ class PartiesFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_parties, container, false)
 
         view.findViewById<Button>(R.id.add_party_button).setOnClickListener(){
-            activity?.startActivity(Intent(activity, EditParty::class.java).apply{})
+            activity?.startActivity(Intent(activity, AddParty::class.java).apply{})
         }
 
         return view

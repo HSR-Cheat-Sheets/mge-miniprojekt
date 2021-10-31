@@ -58,14 +58,14 @@
     <string name="profile_default_number">42</string>
 
     <!--    Party -->
-    <string name="party_name">Edit Name</string>
-    <string name="party_date">Edit Date</string>
-    <string name="party_location">Edit Location</string>
+    <string name="party_name">Name</string>
+    <string name="party_date">Date</string>
+    <string name="party_location">Location</string>
     <string name="party_friends">Invite Friends</string>
 
     <!--    Edit Party -->
-    <string name="edit_party_title">Edit Party</string>
-    <string name="edit_party_number">Number: 42</string>
+    <string name="add_party_title">Add Party</string>
+<!--    <string name="edit_party_number">Number: 42</string>-->
     <string name="edit_party_details">Details</string>
 
     <!-- Dashboard Fragemnt  -->
@@ -78,6 +78,8 @@
     <string name="menu_nav_dashboard">Dashboard</string>
     <string name="menu_nav_parties">Parties</string>
     <string name="menu_nav_profile">Profile</string>
+
+
 
 
 </resources>

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SPP">
         <activity
-            android:name=".EditParty"
+            android:name=".AddParty"
             android:exported="true" />
         <activity
             android:name=".EditProfileActivity"

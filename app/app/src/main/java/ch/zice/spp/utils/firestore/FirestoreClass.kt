@@ -105,6 +105,14 @@ class FirestoreClass {
         getUserDetails(activity)
     }
 
+    fun updateParty(activity: Activity, userHashMap: HashMap<String, Any>){
+        mFireStore.collection(Constants.PARTIES)
+            .add(userHashMap)
+            .addOnSuccessListener { Toast.makeText(activity, "Party added successfully", Toast.LENGTH_SHORT).show() }
+            .addOnFailureListener { Toast.makeText(activity, "An error occurred while adding the party.", Toast.LENGTH_SHORT).show() }
+        getUserDetails(activity)
+    }
+
     fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?){
 
         val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(

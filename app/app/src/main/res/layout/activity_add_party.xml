@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditParty">
+    tools:context=".AddParty">
 
 
     <ImageView
@@ -20,26 +20,26 @@
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
-        android:id="@+id/editParty"
+        android:id="@+id/addParty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:text="@string/edit_party_title"
+        android:text="@string/add_party_title"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-    <TextView
-        android:id="@+id/editPartyNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:text="@string/edit_party_number"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+<!--    <TextView-->
+<!--        android:id="@+id/editPartyNumber"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:textSize="18dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="@string/edit_party_number"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageView" />-->
 
     <TextView
         android:id="@+id/editPartyDetails"
@@ -54,7 +54,7 @@
 
 
     <EditText
-        android:id="@+id/editPartyName"
+        android:id="@+id/addPartyName"
         style="@style/inputField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -69,51 +69,50 @@
         app:layout_constraintTop_toBottomOf="@+id/editPartyDetails" />
 
     <EditText
-        android:id="@+id/editPartyDate"
+        android:id="@+id/addPartyDate"
         style="@style/inputField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/party_date"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editPartyName"
-        app:layout_constraintStart_toStartOf="@+id/editPartyName"
-        app:layout_constraintTop_toBottomOf="@+id/editPartyName" />
+        app:layout_constraintEnd_toEndOf="@+id/addPartyName"
+        app:layout_constraintStart_toStartOf="@+id/addPartyName"
+        app:layout_constraintTop_toBottomOf="@+id/addPartyName" />
 
     <EditText
-        android:id="@+id/editPartyLocation"
+        android:id="@+id/addPartyLocation"
         style="@style/inputField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/party_location"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editPartyDate"
-        app:layout_constraintStart_toStartOf="@+id/editPartyDate"
-        app:layout_constraintTop_toBottomOf="@+id/editPartyDate" />
+        app:layout_constraintEnd_toEndOf="@+id/addPartyDate"
+        app:layout_constraintStart_toStartOf="@+id/addPartyDate"
+        app:layout_constraintTop_toBottomOf="@+id/addPartyDate" />
 
-    <EditText
-        android:id="@+id/editPartyFriends"
-        style="@style/inputField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/party_friends"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editPartyLocation"
-        app:layout_constraintStart_toStartOf="@+id/editPartyLocation"
-        app:layout_constraintTop_toBottomOf="@+id/editPartyLocation" />
+<!--    <EditText-->
+<!--        android:id="@+id/editPartyFriends"-->
+<!--        style="@style/inputField"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/party_friends"-->
+<!--        android:inputType="textPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editPartyLocation"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/editPartyLocation"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editPartyLocation" />-->
 
     <Button
-        android:id="@+id/button_edit_profile_save"
+        android:id="@+id/button_add_party"
         style="@style/buttonPrimary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Save changes"
-        app:layout_constraintEnd_toEndOf="@+id/editPartyFriends"
-        app:layout_constraintStart_toStartOf="@+id/editPartyFriends"
-        app:layout_constraintTop_toBottomOf="@+id/editPartyFriends" />
+        android:text="Add party"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/addPartyLocation"
+        app:layout_constraintStart_toStartOf="@+id/addPartyLocation" />
 
 
 

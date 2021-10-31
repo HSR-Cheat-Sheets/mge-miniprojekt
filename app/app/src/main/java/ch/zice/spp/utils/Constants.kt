@@ -19,6 +19,7 @@ object Constants {
     const val PARTIES: String = "parties"
     const val USER_ID: String = "user_id"
 
+
     fun showImageChooser(activity: Activity){
         val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         activity.startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST_CODE)

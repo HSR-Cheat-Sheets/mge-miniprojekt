@@ -32,6 +32,7 @@ open class MyPartiesListAdapter(
         if(holder is MyViewHolder){
             holder.itemView.findViewById<TextView>(R.id.tv_party_name_id).text = model.name
             holder.itemView.findViewById<TextView>(R.id.tv_party_location_id).text = model.location
+            holder.itemView.findViewById<TextView>(R.id.tv_party_date_id).text = model.date
         }
     }
 

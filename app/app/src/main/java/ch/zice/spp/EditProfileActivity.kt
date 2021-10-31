@@ -15,7 +15,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import ch.zice.spp.utils.Constants
 import ch.zice.spp.utils.firestore.FirestoreClass
-import ch.zice.spp.utils.models.User
 import com.bumptech.glide.Glide
 import java.io.IOException
 
@@ -28,7 +27,7 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
 
-        val saveButton = findViewById<Button>(R.id.button_edit_profile_save)
+        val saveButton = findViewById<Button>(R.id.button_add_profile_save)
 
         val firstnameView = findViewById<EditText>(R.id.editProfileFirstname)
         val lastnameView = findViewById<EditText>(R.id.editProfileLastname)
