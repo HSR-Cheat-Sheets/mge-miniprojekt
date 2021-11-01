@@ -143,6 +143,10 @@ class EditProfileActivity : AppCompatActivity() {
         }
     }
 
+    fun onSuccessSave(){
+        finish()
+    }
+
 
 
 }

@@ -103,9 +103,14 @@ class FirestoreClass {
     fun updateUserProfileData(activity: Activity, userHashMap: HashMap<String, Any>){
         mFireStore.collection(Constants.USERS).document(getCurrentUserID())
             .update(userHashMap)
-            .addOnSuccessListener { Toast.makeText(activity, "Data save successfully", Toast.LENGTH_SHORT).show() }
+            .addOnSuccessListener { Toast.makeText(activity, "Profile update successfully", Toast.LENGTH_SHORT).show() }
             .addOnFailureListener { Toast.makeText(activity, "An error occurred while updating the data.", Toast.LENGTH_SHORT).show() }
         getUserDetails(activity)
+        when(activity){
+            is EditProfileActivity -> {
+                activity.onSuccessSave()
+            }
+        }
     }
 
     fun updateParty(activity: Activity, userHashMap: HashMap<String, Any>){
