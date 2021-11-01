@@ -52,10 +52,6 @@
     <!--    Profile -->
     <string name="profile_edit">Edit Profile</string>
     <string name="profile_logout">Log out</string>
-    <string name="profile_attended">Parties attended</string>
-    <string name="profile_friends">Friends</string>
-    <string name="profile_invites">Friend invites</string>
-    <string name="profile_default_number">42</string>
 
     <!--    Party -->
     <string name="party_name">Name</string>
@@ -69,9 +65,13 @@
     <string name="edit_party_details">Details</string>
 
     <!-- Dashboard Fragemnt  -->
-    <string name="dashboard_fragment_welcome_text">Welcome!</string>
+    <string name="dashboard_fragment_welcome_text">Welcome to</string>
+    <string name="dashboard_fragment_welcome_text2">Student Party Planner!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard_default_number">0</string>
+    <string name="dashboard_registered_users">Registered Users</string>
+    <string name="dashboard_registered_parties">Registered Parties</string>
 
 
 <!--    Bottom Menu Navigation Tabs -->

@@ -21,16 +21,17 @@ class AddParty : AppCompatActivity() {
             val nameText = name.text
             val dateText = date.text
             val locationText = location.text
+            val userID = FirestoreClass().getCurrentUserID()
 
             // TODO: Validate data
             // Code here
             // validateData(nameText, dateText, locationText)
 
-            // TODO: Upload data
             val partyHashmap = HashMap<String, Any>()
             partyHashmap["name"] = nameText.toString()
             partyHashmap["date"] = dateText.toString()
             partyHashmap["location"] = locationText.toString()
+            partyHashmap["user_id"] = userID.toString()
 
             FirestoreClass().updateParty(this, partyHashmap)
 

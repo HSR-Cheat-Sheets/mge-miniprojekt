@@ -9,11 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.R
+import ch.zice.spp.adapters.MyPartiesListAdapter
 import ch.zice.spp.utils.Constants
 import ch.zice.spp.utils.auth.FirebaseAuthClass
+import ch.zice.spp.utils.firestore.FirestoreClass
+import ch.zice.spp.utils.models.Party
 
 
 class ProfileFragment : Fragment() {
@@ -21,6 +26,12 @@ class ProfileFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
+    override fun onResume() {
+        super.onResume()
+        getmyPartiesListFromFirestore()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,12 +61,22 @@ class ProfileFragment : Fragment() {
         return view
     }
 
-    override fun onResume() {
-        super.onResume()
 
-
+    private fun getmyPartiesListFromFirestore(){
+        FirestoreClass().getMyPartiesList(this)
     }
 
+    fun successMyPartiesListFromFirestore(partiesList: ArrayList<Party>){
+        val listView = view?.findViewById<RecyclerView>(R.id.rv_my_party_items)
+
+        if(partiesList.size > 0){
+            listView?.layoutManager = LinearLayoutManager(activity)
+            listView?.setHasFixedSize(true)
+            val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList)
+            listView?.adapter = adapterParties
+        }
+
+    }
 
 }
 

@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.RegisterActivity
+import ch.zice.spp.fragments.DashboardFragment
 import ch.zice.spp.fragments.PartiesFragment
+import ch.zice.spp.fragments.ProfileFragment
 import ch.zice.spp.utils.Constants
 import ch.zice.spp.utils.models.Party
 import ch.zice.spp.utils.models.User
@@ -140,7 +142,7 @@ class FirestoreClass {
 
     fun getPartiesList(fragment: Fragment){
         mFireStore.collection(Constants.PARTIES)
-//            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .whereNotEqualTo("user_id", getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
                 Log.e("Parties List", document.documents.toString())
@@ -160,6 +162,69 @@ class FirestoreClass {
                 }
 
             }
+    }
+
+    fun getMyPartiesList(fragment: Fragment) {
+        mFireStore.collection(Constants.PARTIES)
+            .whereEqualTo("user_id", getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                Log.e("Parties List", document.documents.toString())
+                val partiesList: ArrayList<Party> = ArrayList()
+
+                for (i in document.documents){
+                    val party = i.toObject(Party::class.java)
+                    party!!.id = i.id
+
+                    partiesList.add(party)
+                }
+                when(fragment){
+                    is ProfileFragment -> {
+                        fragment.successMyPartiesListFromFirestore(partiesList)
+                    }
+                }
+
+            }
+    }
+
+    fun countAllParties(fragment: Fragment) {
+        mFireStore.collection(Constants.PARTIES)
+            .get()
+            .addOnSuccessListener { document ->
+                val partiesList: ArrayList<Party> = ArrayList()
+                for (i in document.documents){
+                    val party = i.toObject(Party::class.java)
+                    if (party != null) {
+                        partiesList.add(party)
+                    }
+                }
+                when(fragment){
+                    is DashboardFragment -> {
+                        fragment.successPartiesCountFromFirestore(partiesList.size)
+                    }
+                }
+            }
+
+    }
+
+    fun countAllUsers(fragment: Fragment) {
+        mFireStore.collection(Constants.USERS)
+            .get()
+            .addOnSuccessListener { document ->
+                val userList: ArrayList<User> = ArrayList()
+                for (i in document.documents){
+                    val user = i.toObject(User::class.java)
+                    if (user != null) {
+                        userList.add(user)
+                    }
+                }
+                when(fragment){
+                    is DashboardFragment -> {
+                        fragment.successUsersCountFromFirestore(userList.size)
+                    }
+                }
+            }
+
     }
 
 }

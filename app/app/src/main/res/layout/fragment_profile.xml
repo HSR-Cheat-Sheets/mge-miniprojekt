@@ -48,64 +48,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/profile_button_edit"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/profile_number_attended"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_my_party_items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="32dp"
-        android:text="@string/profile_default_number"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/profile_textview_attended"
-        app:layout_constraintStart_toStartOf="@+id/profile_textview_attended"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_profile_picture" />
-
-    <TextView
-        android:id="@+id/profile_number_friends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_default_number"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/profile_textview_friends"
-        app:layout_constraintStart_toStartOf="@+id/profile_textview_friends"
-        app:layout_constraintTop_toTopOf="@+id/profile_number_attended" />
-
-    <TextView
-        android:id="@+id/profile_number_invites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_default_number"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/profile_textview_invites"
-        app:layout_constraintStart_toStartOf="@+id/profile_textview_invites"
-        app:layout_constraintTop_toTopOf="@+id/profile_number_friends" />
-
-    <TextView
-        android:id="@+id/profile_textview_attended"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/profile_attended"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_number_attended" />
-
-    <TextView
-        android:id="@+id/profile_textview_friends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_friends"
-        app:layout_constraintEnd_toStartOf="@+id/profile_textview_invites"
-        app:layout_constraintStart_toEndOf="@+id/profile_textview_attended"
-        app:layout_constraintTop_toTopOf="@+id/profile_textview_attended" />
-
-    <TextView
-        android:id="@+id/profile_textview_invites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:text="@string/profile_invites"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile_textview_friends" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_button_edit" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
