@@ -32,9 +32,7 @@ class PartiesFragment : Fragment() {
 
         val view: View = inflater.inflate(R.layout.fragment_parties, container, false)
 
-        view.findViewById<Button>(R.id.add_party_button).setOnClickListener(){
-            activity?.startActivity(Intent(activity, AddParty::class.java).apply{})
-        }
+
 
         return view
     }

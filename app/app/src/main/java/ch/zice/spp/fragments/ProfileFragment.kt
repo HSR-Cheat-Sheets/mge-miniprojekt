@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ch.zice.spp.AddParty
 import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.R
@@ -45,6 +46,10 @@ class ProfileFragment : Fragment() {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             }
             activity?.startActivity(i)
+        }
+
+        view.findViewById<Button>(R.id.add_party_button).setOnClickListener(){
+            activity?.startActivity(Intent(activity, AddParty::class.java).apply{})
         }
 
         val sharedPrefs = this.getActivity()?.getSharedPreferences(Constants.SPP_PREFERENCES, Context.MODE_PRIVATE)

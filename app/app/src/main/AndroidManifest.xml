@@ -14,7 +14,11 @@
         android:theme="@style/Theme.SPP">
         <activity
             android:name=".AddParty"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".EditProfileActivity"
             android:exported="true">
@@ -31,12 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TabProfile.DeleteAccountActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TabFriends.SendFriendRequestActivity"
-            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"

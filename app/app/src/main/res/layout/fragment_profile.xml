@@ -1,64 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".fragments.ProfileFragment"
+    android:orientation="vertical"
+    >
 
-    <ImageView
-        android:id="@+id/imageView_profile_picture"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:contentDescription="@string/logo_content_descrition"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView_profile_picture"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/logo_content_descrition"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profile_textview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstname"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/profile_button_edit"
+            app:layout_constraintTop_toTopOf="@+id/imageView_profile_picture" />
+
+        <Button
+            android:id="@+id/profile_button_edit"
+            style="@style/buttonPrimary"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_edit"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_profile_picture"
+            app:layout_constraintEnd_toStartOf="@+id/profile_button_logout"
+            app:layout_constraintStart_toEndOf="@+id/imageView_profile_picture" />
+
+        <Button
+            android:id="@+id/profile_button_logout"
+            style="@style/buttonSecondary"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/profile_logout"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_button_edit"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <TextView
-        android:id="@+id/profile_textview_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/firstname"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/profile_button_edit"
-        app:layout_constraintTop_toTopOf="@+id/imageView_profile_picture" />
+        android:text="My Parties"
+        android:layout_marginStart="16dp"
+        />
 
     <Button
-        android:id="@+id/profile_button_edit"
+        android:id="@+id/add_party_button"
         style="@style/buttonPrimary"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/profile_edit"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_profile_picture"
-        app:layout_constraintEnd_toStartOf="@+id/profile_button_logout"
-        app:layout_constraintStart_toEndOf="@+id/imageView_profile_picture" />
-
-    <Button
-        android:id="@+id/profile_button_logout"
-        style="@style/buttonSecondary"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:text="@string/profile_logout"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_button_edit"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_my_party_items"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:text="Add party"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_button_edit" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_party_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            />
 
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</LinearLayout>
