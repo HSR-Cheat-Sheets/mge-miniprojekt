@@ -33,8 +33,6 @@ class EditProfileActivity : AppCompatActivity() {
         val lastnameView = findViewById<EditText>(R.id.editProfileLastname)
         val emailView = findViewById<EditText>(R.id.editProfileEmail)
         val mobileView = findViewById<EditText>(R.id.editProfileMobile)
-        val passwordView = findViewById<EditText>(R.id.editProfilePassword)
-        val passwordConfirmView = findViewById<EditText>(R.id.editProfilePasswordConfirm)
 
         val profilePicture = findViewById<ImageView>(R.id.imageView_edit_profile_picture)
         profilePicture.setOnClickListener(){ changeProfilePicture() }
@@ -58,8 +56,6 @@ class EditProfileActivity : AppCompatActivity() {
             userObject["lastName"] = lastnameView.text.toString()
             userObject["email"] = emailView.text.toString()
             userObject["mobile"] = mobileView.text.toString()
-            userObject["password"] = passwordView.text.toString()
-            userObject["passwordConfirm"] = passwordConfirmView.text.toString()
 
             if (mSelectedImageFileUri != null){
                 FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
@@ -93,14 +89,11 @@ class EditProfileActivity : AppCompatActivity() {
 
 
     private fun saveData(userHashMap: HashMap<String, Any>){
-        userHashMap.remove("password")
-        userHashMap.remove("passwordConfirm")
-        userHashMap["mobile"] = Integer.parseInt(userHashMap.get("mobile").toString())
+        userHashMap["mobile"] = Integer.parseInt(userHashMap["mobile"].toString())
         FirestoreClass().updateUserProfileData(this, userHashMap)
     }
 
     private fun validateData(userHashMap: HashMap<String, Any>): Boolean {
-        // TODO: Implement validation
 
         return when {
             TextUtils.isEmpty(userHashMap["firstName"].toString()) -> {

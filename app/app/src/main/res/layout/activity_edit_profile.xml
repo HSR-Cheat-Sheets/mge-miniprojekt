@@ -79,56 +79,16 @@
         app:layout_constraintTop_toBottomOf="@+id/editProfileEmail"
         android:importantForAutofill="no" />
 
-    <EditText
-        style="@style/inputField"
-        android:id="@+id/editProfilePassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editProfileMobile"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/editProfileMobile"
-        app:layout_constraintTop_toBottomOf="@+id/editProfileMobile"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/editProfilePasswordConfirm"
-        style="@style/inputField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password_confirm"
-        android:importantForAutofill="no"
-        android:inputType="numberPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editProfilePassword"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/editProfilePassword"
-        app:layout_constraintTop_toBottomOf="@+id/editProfilePassword" />
-
     <Button
         android:id="@+id/button_add_profile_save"
         style="@style/buttonPrimary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Save changes"
-        app:layout_constraintEnd_toEndOf="@+id/editProfilePasswordConfirm"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editProfilePasswordConfirm"
-        app:layout_constraintTop_toBottomOf="@+id/editProfilePasswordConfirm" />
-
-
-
-    <Button
-        android:id="@+id/button_edit_profile_delete"
-        style="@style/buttonDanger"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/edit_profile_delete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button_add_profile_save"
-        app:layout_constraintStart_toStartOf="@+id/button_add_profile_save"
-        android:layout_marginBottom="32dp"/>
+        app:layout_constraintEnd_toEndOf="@+id/editProfileMobile"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editProfileMobile" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
