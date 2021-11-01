@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ch.zice.spp.AddParty
@@ -70,9 +71,18 @@ class ProfileFragment : Fragment() {
         if(partiesList.size > 0){
             listView?.layoutManager = LinearLayoutManager(activity)
             listView?.setHasFixedSize(true)
-            val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList)
+            val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList, this)
             listView?.adapter = adapterParties
         }
+    }
+
+    fun deleteParty(partyID: String){
+        FirestoreClass().deleteParty(this, partyID)
+    }
+
+    fun deletePartyOnSuccess(){
+        Toast.makeText(activity, "Party deleted", Toast.LENGTH_SHORT).show()
+        FirestoreClass().getMyPartiesList(this)
     }
 }
 

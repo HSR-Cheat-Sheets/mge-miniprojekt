@@ -240,4 +240,17 @@ class FirestoreClass {
 
     }
 
+
+    fun deleteParty(fragment: Fragment, partyID: String){
+        mFireStore.collection(Constants.PARTIES).document(partyID)
+            .delete()
+            .addOnSuccessListener {
+                when(fragment){
+                    is ProfileFragment -> {
+                        fragment.deletePartyOnSuccess()
+                    }
+                }
+            }
+    }
+
 }

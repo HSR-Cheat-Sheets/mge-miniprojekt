@@ -48,11 +48,13 @@ class PartiesFragment : Fragment() {
         if(partiesList.size > 0){
             listView?.layoutManager = LinearLayoutManager(activity)
             listView?.setHasFixedSize(true)
-            val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList)
+            val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList, this)
             listView?.adapter = adapterParties
         }
 
     }
+
+
 
 
 }
