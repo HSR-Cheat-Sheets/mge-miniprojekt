@@ -16,31 +16,26 @@ class AddParty : AppCompatActivity() {
         val location = findViewById<EditText>(R.id.addPartyLocation)
 
         val addPartyButton = findViewById<Button>(R.id.button_add_party)
-        addPartyButton.setOnClickListener(){
+        addPartyButton.setOnClickListener {
 
             val nameText = name.text
             val dateText = date.text
             val locationText = location.text
             val userID = FirestoreClass().getCurrentUserID()
 
-            // TODO: Validate data
-            // Code here
-            // validateData(nameText, dateText, locationText)
-
             val partyHashmap = HashMap<String, Any>()
             partyHashmap["name"] = nameText.toString()
             partyHashmap["date"] = dateText.toString()
             partyHashmap["location"] = locationText.toString()
-            partyHashmap["user_id"] = userID.toString()
+            partyHashmap["user_id"] = userID
 
             FirestoreClass().updateParty(this, partyHashmap)
-
-
         }
-
     }
 
-
+    fun onSuccessCreate(){
+        finish()
+    }
 
 }
 

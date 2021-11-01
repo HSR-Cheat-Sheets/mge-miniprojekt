@@ -7,6 +7,7 @@ import android.net.Uri
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import ch.zice.spp.AddParty
 import ch.zice.spp.EditProfileActivity
 import ch.zice.spp.LoginActivity
 import ch.zice.spp.RegisterActivity
@@ -110,7 +111,14 @@ class FirestoreClass {
     fun updateParty(activity: Activity, userHashMap: HashMap<String, Any>){
         mFireStore.collection(Constants.PARTIES)
             .add(userHashMap)
-            .addOnSuccessListener { Toast.makeText(activity, "Party added successfully", Toast.LENGTH_SHORT).show() }
+            .addOnSuccessListener {
+                Toast.makeText(activity, "Party added successfully", Toast.LENGTH_SHORT).show()
+                when(activity){
+                    is AddParty -> {
+                        activity.onSuccessCreate()
+                    }
+                }
+            }
             .addOnFailureListener { Toast.makeText(activity, "An error occurred while adding the party.", Toast.LENGTH_SHORT).show() }
         getUserDetails(activity)
     }
