@@ -11,9 +11,6 @@ import ch.zice.spp.utils.firestore.FirestoreClass
 
 class DashboardFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +21,6 @@ class DashboardFragment : Fragment() {
         getPartiesCountFromFirestore()
         getUserCountFromFirestore()
         return view
-
     }
 
     private fun getUserCountFromFirestore(){

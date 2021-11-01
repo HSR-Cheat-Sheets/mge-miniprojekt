@@ -7,6 +7,4 @@ class User (
     val email: String = "",
     val image: String = "",
     val mobile: Long = 0,
-    val gender: String = "",
-
 )

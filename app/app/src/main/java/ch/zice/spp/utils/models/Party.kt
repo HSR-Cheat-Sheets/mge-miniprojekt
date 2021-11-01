@@ -6,5 +6,4 @@ data class Party (
     var location: String = "",
     val name: String = "",
     var organizer: String = ""
-
 )

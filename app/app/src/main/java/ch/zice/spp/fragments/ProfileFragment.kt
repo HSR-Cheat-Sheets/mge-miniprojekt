@@ -23,15 +23,10 @@ import ch.zice.spp.utils.models.Party
 
 class ProfileFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onResume() {
         super.onResume()
         getmyPartiesListFromFirestore()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +45,6 @@ class ProfileFragment : Fragment() {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             }
             activity?.startActivity(i)
-
         }
 
         val sharedPrefs = this.getActivity()?.getSharedPreferences(Constants.SPP_PREFERENCES, Context.MODE_PRIVATE)
@@ -60,7 +54,6 @@ class ProfileFragment : Fragment() {
 
         return view
     }
-
 
     private fun getmyPartiesListFromFirestore(){
         FirestoreClass().getMyPartiesList(this)
@@ -75,8 +68,6 @@ class ProfileFragment : Fragment() {
             val adapterParties = MyPartiesListAdapter(requireActivity(), partiesList)
             listView?.adapter = adapterParties
         }
-
     }
-
 }
 

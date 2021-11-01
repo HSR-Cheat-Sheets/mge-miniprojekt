@@ -9,26 +9,22 @@ import android.widget.Button
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        supportActionBar?.hide(); // hide the title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        supportActionBar?.hide()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        // Register button
         val buttonRegister = findViewById<Button>(R.id.button_register)
         buttonRegister.setOnClickListener(){
             goToRegisterActivity()
         }
 
-        // Login button
         val buttonLogin = findViewById<Button>(R.id.button_login)
         buttonLogin.setOnClickListener(){
             goToLoginActivity()
         }
-
     }
-
 
     private fun goToLoginActivity(){
         val intent = Intent(this, LoginActivity::class.java).apply{}

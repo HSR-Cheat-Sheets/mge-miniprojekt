@@ -65,7 +65,6 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             TextUtils.isEmpty(email.trim{it <= ' '}) -> {
-//                android.util.Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()
                 Toast.makeText(
                     this,
                     "Please enter valid email",
@@ -110,7 +109,6 @@ class RegisterActivity : AppCompatActivity() {
 
                                 FirestoreClass().registerUser(this@RegisterActivity, user)
 
-
                             } else {
                                 Toast.makeText(
                                     this,
@@ -126,7 +124,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun showProgress(){
         mProgressDialog = Dialog(this)
-        mProgressDialog.setContentView(R.layout.dialoag_progress)
         mProgressDialog.setCancelable(false)
         mProgressDialog.setCanceledOnTouchOutside(false)
         mProgressDialog.show()

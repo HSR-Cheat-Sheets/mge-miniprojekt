@@ -82,12 +82,4 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextLoginPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextLoginPassword" />
 
-    <TextView
-        android:id="@+id/loginTestTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="not logged in"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="398dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,11 +14,8 @@ import com.google.android.material.navigation.NavigationBarView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-
     private val dashboardFragment = DashboardFragment()
     private val partiesFragment = PartiesFragment()
-//    private val friendsFragment = FriendsFragment()
     private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,12 +24,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
         supportActionBar?.hide() // hide the title bar
 
-
         replaceFragment(dashboardFragment)
-
 
         val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavBar.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
@@ -46,10 +40,6 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(partiesFragment)
                     true
                 }
-//                R.id.ic_friends -> {
-//                    replaceFragment(friendsFragment)
-//                    true
-//                }
                 R.id.ic_profile -> {
                     replaceFragment(profileFragment)
                     true
@@ -63,9 +53,5 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
-
     }
-    
-    
-
 }

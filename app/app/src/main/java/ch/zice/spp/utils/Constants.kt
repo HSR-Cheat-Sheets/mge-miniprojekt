@@ -12,10 +12,8 @@ object Constants {
     const val LOGGED_IN_USERNAME: String = "logged_in_username"
     const val READ_STORAGE_PERMISSION_CODE: Int = 2
     const val PICK_IMAGE_REQUEST_CODE: Int = 1
-
     const val USER_PROFILE_IMAGE: String = "User_Profile_Image"
     const val USER_PROFILE_IMAGE_URI: String = "User_Profile_Image_uri"
-
     const val PARTIES: String = "parties"
 
 

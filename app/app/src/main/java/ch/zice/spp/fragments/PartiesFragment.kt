@@ -19,10 +19,6 @@ import kotlin.collections.ArrayList
 
 class PartiesFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onResume() {
         super.onResume()
         getPartiesListFromFirestore()

@@ -26,10 +26,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         val buttonLogin = findViewById<Button>(R.id.button_login_activity_login)
-        val tmpTextTest = findViewById<TextView>(R.id.loginTestTextView)
 
         buttonLogin.setOnClickListener(){
-            tmpTextTest.text = "Login process started ..."
             val emailString: String = email.text.toString()
             val passwordString: String = password.text.toString()
             if(validateLoginDetails(emailString, passwordString)){
@@ -41,7 +39,6 @@ class LoginActivity : AppCompatActivity() {
                                 "Login succeeded",
                                 Toast.LENGTH_SHORT
                             ).show()
-                            tmpTextTest.text = "Login succeeded ..." + FirebaseAuth.getInstance().currentUser
                             FirestoreClass().getUserDetails(this@LoginActivity)
 
                         } else {
@@ -50,7 +47,6 @@ class LoginActivity : AppCompatActivity() {
                                 "Login failed",
                                 Toast.LENGTH_SHORT
                             ).show()
-                            tmpTextTest.text = "Login failed ..."
                         }
                     }
             } else {
@@ -60,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-//            goToMainActivity()
         }
 
     }
@@ -76,7 +71,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun validateLoginDetails(email: String, password: String): Boolean{
-
 
         return when{
             TextUtils.isEmpty(email.trim { it <= ' '}) -> {
@@ -98,11 +92,6 @@ class LoginActivity : AppCompatActivity() {
             }
 
             else -> {
-//                Toast.makeText(
-//                    this,
-//                    "Your details are valid",
-//                    Toast.LENGTH_SHORT
-//                ).show()
                 true
             }
         }

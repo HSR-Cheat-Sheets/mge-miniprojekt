@@ -27,8 +27,6 @@ open class MyPartiesListAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val model = list[position]
 
-
-
         if(holder is MyViewHolder){
             holder.itemView.findViewById<TextView>(R.id.tv_party_name_id).text = model.name
             holder.itemView.findViewById<TextView>(R.id.tv_party_location_id).text = model.location
@@ -37,7 +35,6 @@ open class MyPartiesListAdapter(
     }
 
     override fun getItemCount(): Int {
-
         return list.size
     }
 
