@@ -1,4 +1,4 @@
-# mge-miniprojekt
+# MGE Miniprojekt
 
 ## Was ist der SPP (Student Party Planner)?
 Eine simple Android mobile App mit welcher Studenten Parties organisieren können. 
